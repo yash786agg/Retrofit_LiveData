@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "app.com.IxigoTest"
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //android-support
+    implementation 'com.android.support:appcompat-v7:'+ rootProject.supportLibraryVersion
+    compile 'com.android.support:design:'+ rootProject.supportLibraryVersion
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:'+retrofitVersion
+    compile 'com.squareup.retrofit2:converter-gson:'+retrofitVersion
+
+    //Android lifecycle Dependency Injection
+    compile 'android.arch.lifecycle:runtime:'+rootProject.liveDataVersion
+    compile 'android.arch.lifecycle:extensions:'+rootProject.liveExtensionVersion
+
+    //Vector-icon
+    compile 'com.android.support:support-vector-drawable:'+ rootProject.supportLibraryVersion
+}

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">IxigoTest</string>
+
+    <!-- MainActivity -->
+
+    <string name="dash"> - </string>
+    <string name="cheap">cheap</string>
+    <string name="early">early</string>
+    <string name="rupee">₹</string>
+    <string name="nonStop">non-stop</string>
+
+    <!-- FlightDetails -->
+
+    <string name="bookingOptions">Booking Options</string>
+    <string name="book">Book</string>
+    <string name="faresPerAdult">*all fares are per adult</string>
+    <string name="delhiAirport">Indira Gandhi Intl Airport</string>
+    <string name="mumbaiAiport">Chatrapati Shivaji Intl Airport</string>
+    <string name="viewAll">View All</string>
+    <string name="viewLess">View Less</string>
+</resources>

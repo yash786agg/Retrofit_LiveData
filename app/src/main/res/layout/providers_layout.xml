@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/providersll"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/providerName"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/bookingOptions"
+            android:textSize="@dimen/textSize16sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:layout_weight="1.1" />
+
+        <TextView
+            android:id="@+id/providerPrice"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/bookingOptions"
+            android:textSize="@dimen/textSize16sp"
+            android:layout_gravity="center"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="@dimen/dimen0dp"
+            android:paddingLeft="@dimen/dimen0dp"
+            android:gravity="end"
+            android:textColor="@android:color/black"
+            android:layout_weight="1.1"/>
+
+        <Button
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:text="@string/book"
+            android:layout_margin="5dp"
+            android:textSize="@dimen/textSize16sp"
+            android:textColor="@android:color/white"
+            android:layout_weight="0.8"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/book_btn_selector"/>
+
+    </LinearLayout>
+
+</LinearLayout>

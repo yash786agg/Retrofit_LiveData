@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="purple">#551A8B</color>
+    <color name="Maroon">#b03060</color>
+    <color name="indian_Red">#cd5c5c</color>
+    <color name="colorLightGrey">#f9f8f8</color>
+    <color name="dividerColor">#c9cbcc</color>
+    <color name="lineViewColor">#e1e1e1</color>
+    <color name="colorOrange">#f16622</color>
+    <color name="silverFiftyOpacity">#80DFDFE0</color>
+
+</resources>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/silverFiftyOpacity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/topViewMain"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@drawable/main_top_custom_rect"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/backButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back_vector_btn_selector"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimen15dp"
+                    android:layout_marginStart="@dimen/dimen15dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginStart="25dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/flightJourney"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen0dp"
+                        android:layout_weight="1"
+                        android:text="@string/app_name"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:textSize="19sp" />
+
+                    <TextView
+                        android:id="@+id/flightDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen0dp"
+                        android:layout_weight="1"
+                        android:text="@string/app_name"
+                        android:textColor="@android:color/darker_gray"
+                        android:textStyle="bold"
+                        android:textSize="19sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen15dp"
+                android:paddingBottom="@dimen/dimen15dp"
+                android:background="@drawable/custom_rectangle"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bookingOptions"
+                    android:textSize="@dimen/textSize16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="@dimen/dimen15dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dividerColor"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/providersRclv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dividerColor"/>
+
+                <Button
+                    android:id="@+id/bookProvider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:text="@string/viewAll"
+                    android:layout_margin="5dp"
+                    android:textSize="@dimen/textSize16sp"
+                    android:textColor="@color/colorOrange"
+                    android:background="@drawable/viewless_btn_selector"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/faresPerAdult"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/dimen15dp"
+                android:layout_marginRight="@dimen/dimen15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen15dp"
+                android:paddingBottom="@dimen/dimen15dp"
+                android:background="@drawable/custom_rectangle"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen15dp"
+                        android:background="@drawable/flight_vector_icon_selector"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/flightLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen15dp" />
+
+                        <TextView
+                            android:id="@+id/flightClass"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/dividerColor"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:layout_marginTop="@dimen/dimen15dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:weightSum="6"
+                        android:paddingEnd="@dimen/dimen15dp"
+                        android:paddingRight="@dimen/dimen15dp"
+                        android:paddingStart="@dimen/dimen0dp"
+                        android:paddingLeft="@dimen/dimen0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/flightOriginTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen0dp"
+                            android:textSize="19sp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:gravity="end"/>
+
+                        <TextView
+                            android:id="@+id/flightOriginDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen0dp"
+                            android:gravity="end"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen0dp"
+                            android:layout_weight="2.5"
+                            android:gravity="end"
+                            android:text="@string/delhiAirport" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:weightSum="6"
+                        android:paddingStart="@dimen/dimen15dp"
+                        android:paddingLeft="@dimen/dimen15dp"
+                        android:paddingRight="@dimen/dimen0dp"
+                        android:paddingEnd="@dimen/dimen0dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/flightDestTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen0dp"
+                            android:textSize="19sp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2" />
+
+                        <TextView
+                            android:id="@+id/flightDestDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen0dp"
+                            android:layout_weight="1.5" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen0dp"
+                            android:layout_weight="2.5"
+                            android:text="@string/mumbaiAiport" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--<Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="@string/book"
+                    android:textSize="@dimen/textSize16sp"
+                    android:textColor="@color/colorOrange"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:background="@drawable/viewless_btn_selector"/>-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
