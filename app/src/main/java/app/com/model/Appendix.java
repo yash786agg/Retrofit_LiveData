@@ -1,9 +1,6 @@
 package app.com.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 import java.util.Map;
 
@@ -11,7 +8,7 @@ import java.util.Map;
  * Created by Yash on 10/1/18.
  */
 
-public class Appendix implements Serializable //implements Parcelable
+public class Appendix implements Serializable
 {
     /*
     * "appendix":
@@ -51,68 +48,12 @@ public class Appendix implements Serializable //implements Parcelable
         return airlines;
     }
 
-    public void setAirlines(Map<String, String> airlines) {
-        this.airlines = airlines;
-    }
-
     public Map<String, String> getAirports() {
         return airports;
-    }
-
-    public void setAirports(Map<String, String> airports) {
-        this.airports = airports;
     }
 
     public Map<String, String> getProviders() {
         return providers;
     }
 
-    public void setProviders(Map<String, String> providers) {
-        this.providers = providers;
-    }
-
-    /*public Appendix()
-    { }
-
-    @Override
-    public String toString()
-    {
-        return "Appendix{" +
-                "airports='" + airports + '\'' +
-                "airlines='" + airlines + '\'' +
-                ", providers='" + providers + '\'' +
-                '}';
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags)
-    {
-        dest.writeMap(airports);
-        dest.writeMap(airlines);
-        dest.writeMap(providers);
-    }
-
-    private Appendix(Parcel in)
-    {
-        in.readMap(airports,Appendix.class.getClassLoader());
-        in.readMap(airlines,Appendix.class.getClassLoader());
-        in.readMap(providers,Appendix.class.getClassLoader());
-    }
-
-    public static final Parcelable.Creator<Appendix> CREATOR = new Parcelable.Creator<Appendix>() {
-        @Override
-        public Appendix createFromParcel(Parcel in) {
-            return new Appendix(in);
-        }
-
-        @Override
-        public Appendix[] newArray(int size) {
-            return new Appendix[size];
-        }
-    };*/
 }

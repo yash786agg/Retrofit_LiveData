@@ -40,4 +40,9 @@ dependencies {
 
     //Vector-icon
     compile 'com.android.support:support-vector-drawable:'+ rootProject.supportLibraryVersion
+
+    //ButterKnife
+    compile 'com.jakewharton:butterknife:'+rootProject.butterknifeVersion
+    annotationProcessor 'com.jakewharton:butterknife-compiler:'+rootProject.butterknifeVersion
+
 }

@@ -13,6 +13,8 @@ import app.com.Extras.Utility;
 import app.com.IxigoTest.R;
 import app.com.model.Appendix;
 import app.com.model.SortedFlight;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /*
  * Created by Yash on 11/1/18.
@@ -143,8 +145,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-        TextView flightName,flightFare,departureTime,arrivalTime;
-        TextView flightDuration,flightStatus;
+        @BindView(R.id.flightName) TextView flightName;
+        @BindView(R.id.flightFare) TextView flightFare;
+        @BindView(R.id.departureTime) TextView departureTime;
+        @BindView(R.id.arrivalTime) TextView arrivalTime;
+        @BindView(R.id.flightDuration) TextView flightDuration;
+        @BindView(R.id.flightStatus) TextView flightStatus;
 
         /*
          * MyViewHolder is used to Initializing the view.
@@ -154,17 +160,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         {
             super(itemView);
 
-            flightName = itemView.findViewById(R.id.flightName);
-
-            flightFare = itemView.findViewById(R.id.flightFare);
-
-            departureTime = itemView.findViewById(R.id.departureTime);
-
-            arrivalTime = itemView.findViewById(R.id.arrivalTime);
-
-            flightDuration = itemView.findViewById(R.id.flightDuration);
-
-            flightStatus = itemView.findViewById(R.id.flightStatus);
+            ButterKnife.bind(this, itemView);
 
             itemView.setTag(itemView);
             itemView.setOnClickListener(this);

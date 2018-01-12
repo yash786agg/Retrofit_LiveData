@@ -24,6 +24,9 @@ ext
 
      //retrofit
      retrofitVersion = '2.0.2'
+
+     //ButterKnife
+     butterknifeVersion = '8.8.1'
  }
 
 allprojects {

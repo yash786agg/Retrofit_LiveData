@@ -54,7 +54,7 @@ public class Flights implements Parcelable
     @SerializedName("class")
     private String flightClass;
 
-    public Flights()
+    private Flights()
     {
         //Link ---> https://stackoverflow.com/questions/6774645/android-how-to-use-readtypedlist-method-correctly-in-a-parcelable-class
         fareArrayList = new ArrayList<>();
@@ -64,56 +64,28 @@ public class Flights implements Parcelable
         return originCode;
     }
 
-    public void setOriginCode(String originCode) {
-        this.originCode = originCode;
-    }
-
     public String getDestinationCode() {
         return destinationCode;
-    }
-
-    public void setDestinationCode(String destinationCode) {
-        this.destinationCode = destinationCode;
     }
 
     public long getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(long departureTime) {
-        this.departureTime = departureTime;
-    }
-
     public long getArrivalTime() {
         return arrivalTime;
-    }
-
-    public void setArrivalTime(long arrivalTime) {
-        this.arrivalTime = arrivalTime;
     }
 
     public List<FaresData> getFareArrayList() {
         return fareArrayList;
     }
 
-    public void setFareArrayList(List<FaresData> fareArrayList) {
-        this.fareArrayList = fareArrayList;
-    }
-
     public String getAirlineCode() {
         return airlineCode;
     }
 
-    public void setAirlineCode(String airlineCode) {
-        this.airlineCode = airlineCode;
-    }
-
     public String getFlightClass() {
         return flightClass;
-    }
-
-    public void setFlightClass(String flightClass) {
-        this.flightClass = flightClass;
     }
 
     @Override

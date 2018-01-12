@@ -1,27 +1,23 @@
 package app.com.IxigoTest;
 
-import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-import java.util.Map;
-
 import app.com.Adapter.ProvidersAdapter;
 import app.com.Extras.Utility;
 import app.com.model.Appendix;
 import app.com.model.FaresData;
-import app.com.model.FlightResponse;
 import app.com.model.Flights;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /*
  * Created by Yash on 12/1/18.
@@ -29,16 +25,21 @@ import app.com.model.Flights;
 
 public class FlightDetails extends AppCompatActivity implements View.OnClickListener
 {
-    private int indexPosition;
-    private ArrayList<Flights> flights;
+    @BindView(R.id.bookProvider) Button bookProvider;
+    @BindView(R.id.flightJourney) TextView flightJourney;
+    @BindView(R.id.flightDate) TextView flightDate;
+    @BindView(R.id.flightLocation) TextView flightLocation;
+    @BindView(R.id.flightClass) TextView flightClass;
+    @BindView(R.id.flightOriginTime) TextView flightOriginTime;
+    @BindView(R.id.flightOriginDay) TextView flightOriginDay;
+    @BindView(R.id.flightDestTime) TextView flightDestTime;
+    @BindView(R.id.flightDestDay) TextView flightDestDay;
+    @BindView(R.id.providersRclv) RecyclerView providersRclv;
+
     private ProvidersAdapter providersAdapter;
-    private RecyclerView providersRclv;
-    private Button bookProvider;
     private Flights flightsData;
     private Appendix appendix;
     private boolean showProvider = false;
-
-    private static final String TAG = "Main";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -46,78 +47,43 @@ public class FlightDetails extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flight_details);
 
-        flights = getIntent().getParcelableArrayListExtra("flights");
+        ButterKnife.bind(this);
 
-        Log.i(TAG, "onCreate flights: "+flights);
+        ArrayList<Flights> flights = getIntent().getParcelableArrayListExtra("flights");
 
-        indexPosition = getIntent().getIntExtra("indexPosition", 0);
-
-        Log.i(TAG, "onCreate indexPosition: "+indexPosition);
+        int indexPosition = getIntent().getIntExtra("indexPosition", 0);
 
         appendix = (Appendix) getIntent().getSerializableExtra("appendix");
 
-        Log.i(TAG, "onCreate appendix: "+appendix.toString());
-
-        Log.i(TAG, "onCreate Airports: "+appendix.getAirports());
-        Log.i(TAG, "onCreate Airlines: "+appendix.getAirlines());
-        Log.i(TAG, "onCreate Providers: "+appendix.getProviders());
-
-        ImageView backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(this);
-
-        TextView flightJourney = findViewById(R.id.flightJourney);
-
-        TextView flightDate = findViewById(R.id.flightDate);
-
         flightsData = flights.get(indexPosition);
 
-        String journey = flights.get(0).getOriginCode() +this.getResources().getString(R.string.dash)+flights.get(0).getDestinationCode();
+        String journey = flights.get(0).getOriginCode() +this.getResources().getString(R.string.dash)+ flights.get(0).getDestinationCode();
 
         flightJourney.setText(journey);
 
         flightDate.setText(Utility.getCurrentDate());
-
-        TextView flightLocation = findViewById(R.id.flightLocation);
 
         String location = appendix.getAirports().get(flightsData.getOriginCode())+" "+this.getResources().getString(R.string.dash)
                 +" "+ appendix.getAirports().get(flightsData.getDestinationCode());
 
         flightLocation.setText(location);
 
-        TextView flightClass = findViewById(R.id.flightClass);
-
         String flightType = appendix.getAirlines().get(flightsData.getAirlineCode())+" "+this.getResources().getString(R.string.dash)
                 +" "+ flightsData.getFlightClass();
 
         flightClass.setText(flightType);
 
-        TextView flightOriginTime = findViewById(R.id.flightOriginTime);
-
         String originTime = flights.get(0).getOriginCode()+" "+ Utility.convertTimeStampToTime(flightsData.getDepartureTime());
 
         flightOriginTime.setText(originTime);
 
-        TextView flightOriginDay = findViewById(R.id.flightOriginDay);
-
         flightOriginDay.setText(Utility.getCurrentDate());
-
-        TextView flightDestTime = findViewById(R.id.flightDestTime);
 
         String destTime = flights.get(0).getDestinationCode()+" "+ Utility.convertTimeStampToTime(flightsData.getArrivalTime());
 
         flightDestTime.setText(destTime);
 
-        TextView flightDestDay = findViewById(R.id.flightDestDay);
-
         flightDestDay.setText(Utility.getCurrentDate());
-
-        bookProvider = findViewById(R.id.bookProvider);
-
-        bookProvider.setOnClickListener(this);
-
-        providersRclv = findViewById(R.id.providersRclv);
-
-        Log.i("Main", "Provider: "+flightsData.getFareArrayList().size());
 
         if(flightsData.getFareArrayList().size() > 2)
         {
@@ -137,6 +103,7 @@ public class FlightDetails extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
+    @OnClick({R.id.backButton, R.id.bookProvider,R.id.Portrait,R.id.Landscape})
     public void onClick(View v)
     {
         switch (v.getId())
@@ -149,29 +116,27 @@ public class FlightDetails extends AppCompatActivity implements View.OnClickList
 
             case R.id.bookProvider:
 
-                Log.i(TAG, "onClick bookProvider: "+showProvider);
-
                 if(!showProvider)
                 {
-                    Log.i(TAG, "onClick bookProvider if before: "+showProvider);
-
                     bookProvider.setText(FlightDetails.this.getResources().getString(R.string.viewLess));
                     showProvider = true;
-
-                    Log.i(TAG, "onClick bookProvider if after: "+showProvider);
                 }
                 else
                 {
-                    Log.i(TAG, "onClick bookProvider else before: "+showProvider);
-
                     bookProvider.setText(FlightDetails.this.getResources().getString(R.string.viewAll));
                     showProvider = false;
-
-                    Log.i(TAG, "onClick bookProvider else after: "+showProvider);
                 }
 
                 providersAdapter.updateProvider((ArrayList<FaresData>)flightsData.getFareArrayList(),appendix,showProvider);
 
+                break;
+
+            case R.id.Portrait:
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                break;
+
+            case R.id.Landscape:
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                 break;
         }
     }

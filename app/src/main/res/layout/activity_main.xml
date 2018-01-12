@@ -11,43 +11,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/topViewMain"
-            android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
-            android:background="@drawable/main_top_custom_rect">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="2"
-                android:layout_marginLeft="25dp"
-                android:layout_marginStart="25dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/flightJourney"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen0dp"
-                    android:layout_weight="1"
-                    android:text="@string/app_name"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:textSize="19sp" />
-
-                <TextView
-                    android:id="@+id/flightDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen0dp"
-                    android:layout_weight="1"
-                    android:text="@string/app_name"
-                    android:textColor="@android:color/darker_gray"
-                    android:textStyle="bold"
-                    android:textSize="19sp" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
+       <include
+           layout="@layout/appbar"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,5 +57,13 @@
             android:background="@color/colorLightGrey"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:indeterminateTint="@color/colorOrange"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
 
 </android.support.design.widget.CoordinatorLayout>

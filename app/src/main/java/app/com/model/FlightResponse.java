@@ -3,7 +3,6 @@ package app.com.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -22,24 +21,9 @@ public class FlightResponse implements Parcelable
         return appendix;
     }
 
-    public void setAppendix(Appendix appendix) {
-        this.appendix = appendix;
-    }
-
     public List<Flights> getFlights()
     {
         return flights;
-    }
-
-    public void setFlights(List<Flights> flights)
-    {
-        this.flights = flights;
-    }
-
-    public FlightResponse()
-    {
-        //Link ---> https://stackoverflow.com/questions/6774645/android-how-to-use-readtypedlist-method-correctly-in-a-parcelable-class
-        flights = new ArrayList<>();
     }
 
     @Override
@@ -61,14 +45,12 @@ public class FlightResponse implements Parcelable
     {
         dest.writeTypedList(flights);
         dest.writeSerializable(appendix);
-        //dest.writeParcelable(appendix,flags);
     }
 
     private FlightResponse(Parcel in)
     {
         in.readTypedList(flights,Flights.CREATOR);
-       // appendix = in.readParcelable(Appendix.class.getClassLoader());
-         in.readSerializable();
+        in.readSerializable();
     }
 
     public static final Parcelable.Creator<FlightResponse> CREATOR = new Parcelable.Creator<FlightResponse>() {

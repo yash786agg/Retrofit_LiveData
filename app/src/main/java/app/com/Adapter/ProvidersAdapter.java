@@ -2,7 +2,6 @@ package app.com.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,8 @@ import java.util.ArrayList;
 import app.com.IxigoTest.R;
 import app.com.model.Appendix;
 import app.com.model.FaresData;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /*
  * Created by Yash on 12/1/18.
@@ -62,8 +63,6 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
 
         if(!showProvider)
         {
-            Log.i("Main", "onClick bookProvider onBindViewHolder if: "+showProvider);
-
             if(position <= 1)
             {
                 setItems(holder,position);
@@ -75,8 +74,6 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
         }
         else
         {
-            Log.i("Main", "onClick bookProvider onBindViewHolder else: "+showProvider);
-
             holder.providersll.setVisibility(View.VISIBLE);
             setItems(holder,position);
         }
@@ -104,14 +101,13 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
     public void updateProvider(ArrayList<FaresData> faresData,Appendix appendix,boolean showProvider)
     {
         /*
-         * addItems method is to add items in the deliverArrayList and notifiy the adapter for the data change.
+         * updateProvider method is to update items in the faresData based on showProvider boolean
+         * and notifiy the adapter for the data change.
          */
 
         this.faresData = faresData;
         this.appendix = appendix;
         this.showProvider = showProvider;
-
-        Log.i("Main", "onClick bookProvider updateProvider: "+showProvider);
 
         notifyDataSetChanged();
     }
@@ -136,11 +132,11 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
         return position;
     }
 
-
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-        TextView providerName,providerPrice;
-        LinearLayout providersll;
+        @BindView(R.id.providerName) TextView providerName;
+        @BindView(R.id.providerPrice) TextView providerPrice;
+        @BindView(R.id.providersll) LinearLayout providersll;
 
         /*
          * MyViewHolder is used to Initializing the view.
@@ -150,11 +146,7 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
         {
             super(itemView);
 
-            providerName = itemView.findViewById(R.id.providerName);
-
-            providerPrice = itemView.findViewById(R.id.providerPrice);
-
-            providersll = itemView.findViewById(R.id.providersll);
+            ButterKnife.bind(this, itemView);
 
             itemView.setTag(itemView);
         }
