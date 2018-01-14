@@ -1,4 +1,4 @@
-package app.com.Extras;
+package app.com.extras;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -10,7 +10,7 @@ import java.util.TimeZone;
 
 
 /*
- * Created by Yash on 11/1/18.
+ * Created by Yash on 14/1/18.
  */
 
 
@@ -18,6 +18,9 @@ public class Utility
 {
     private static String timePattern = "HH:mm";
 
+    /* @method convertTimeStampToTime
+     * @param  long value of timestamp
+     * @return String format of time after converting timestamp time using SimpleDateFormat.*/
     public static String convertTimeStampToTime(long timestamp)
     {
         try
@@ -33,6 +36,10 @@ public class Utility
         return "";
     }
 
+    /* @method differenceTimeStap
+     * @param  long value of departure and arrival timestamp
+     * @return String format of time after converting timestamp time and local IST format using SimpleDateFormat.*/
+
     public static String differenceTimeStap(long departure,long arrival)
     {
         long diffTime = arrival- departure;
@@ -40,6 +47,7 @@ public class Utility
         return covertTime(convertTimeStampToTime(diffTime));
     }
 
+    // convert time to local IST format
     private static String covertTime(String time)
     {
         DateFormat sdf = new SimpleDateFormat(timePattern,Locale.US);
@@ -57,6 +65,7 @@ public class Utility
         return sdf.format(date);
     }
 
+    // get current date and return in String format
     public static String getCurrentDate()
     {
         Calendar c = Calendar.getInstance();

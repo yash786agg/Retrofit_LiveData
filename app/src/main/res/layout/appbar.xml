@@ -19,8 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:weightSum="2"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginLeft="@dimen/dimen25dp"
+        android:layout_marginStart="@dimen/dimen25dp"
         android:orientation="vertical">
 
         <TextView
@@ -28,37 +28,37 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen0dp"
             android:layout_weight="1"
-            android:text="@string/app_name"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:textSize="19sp" />
+            android:textSize="@dimen/textSize19sp" />
 
         <TextView
             android:id="@+id/flightDate"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen0dp"
             android:layout_weight="1"
-            android:text="@string/app_name"
             android:textColor="@android:color/darker_gray"
             android:textStyle="bold"
-            android:textSize="19sp" />
+            android:textSize="@dimen/textSize19sp" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/Portrait"
-        android:layout_width="wrap_content"
+        android:layout_width="85dp"
         android:layout_height="wrap_content"
         android:text="Portrait"
+        android:textSize="12sp"
         android:layout_marginLeft="@dimen/dimen15dp"
         android:layout_marginStart="@dimen/dimen15dp"
         android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/Landscape"
-        android:layout_width="wrap_content"
+        android:layout_width="85dp"
         android:layout_height="wrap_content"
         android:text="Landscape"
+        android:textSize="12sp"
         android:layout_marginLeft="@dimen/dimen15dp"
         android:layout_marginStart="@dimen/dimen15dp"
         android:layout_gravity="center" />

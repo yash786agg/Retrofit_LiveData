@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
 /*
- * Created by Yash on 10/1/18.
+ * Created by Yash on 14/1/18.
  */
 
 public class FaresData implements Parcelable

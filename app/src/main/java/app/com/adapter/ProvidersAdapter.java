@@ -1,4 +1,4 @@
-package app.com.Adapter;
+package app.com.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import app.com.IxigoTest.R;
+import app.com.ixigotest.R;
 import app.com.model.Appendix;
 import app.com.model.FaresData;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /*
- * Created by Yash on 12/1/18.
+ * Created by Yash on 14/1/18.
  */
 
 public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyViewHolder>
@@ -28,9 +28,7 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
 
     public ProvidersAdapter(Context context, ArrayList<FaresData> faresData,Appendix appendix,boolean showProvider)
     {
-        /*
-         * RecyclerViewAdapter Constructor to Initialize Data which we get from DeliveryList Fragment
-         */
+        // RecyclerViewAdapter Constructor to Initialize Data which we get from FlightDetails Activity
 
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
@@ -42,11 +40,7 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        /*
-         * LayoutInflater is used to Inflate the view
-         * from adapter_layout
-         * for showing data in RecyclerView
-         */
+        // LayoutInflater is used to Inflate the view from adapter_layout for showing data in RecyclerView.
 
         View view = layoutInflater.inflate(R.layout.providers_layout, parent, false);
         return new MyViewHolder(view);
@@ -55,11 +49,7 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
     @Override
     public void onBindViewHolder(final ProvidersAdapter.MyViewHolder holder, final int position)
     {
-        /*
-         * onBindViewHolder is used to Set all the respective data
-         * to Textview or Imagview form deliveryArrayList
-         * ArrayList Object.
-         */
+        // onBindViewHolder is used to Set all the respective data to Textview form faresData ArrayList
 
         if(!showProvider)
         {
@@ -116,7 +106,7 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
     public int getItemCount()
     {
         /*
-         * getItemCount is used to get the size of respective deliveryArrayList
+         * getItemCount is used to get the size of respective faresData ArrayList
          */
 
         return faresData.size();
@@ -138,9 +128,7 @@ public class ProvidersAdapter extends RecyclerView.Adapter<ProvidersAdapter.MyVi
         @BindView(R.id.providerPrice) TextView providerPrice;
         @BindView(R.id.providersll) LinearLayout providersll;
 
-        /*
-         * MyViewHolder is used to Initializing the view.
-         */
+        // MyViewHolder is used to Initializing the view.
 
         MyViewHolder(View itemView)
         {

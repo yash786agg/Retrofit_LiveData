@@ -1,7 +1,7 @@
-package app.com.apiRequest;
+package app.com.apirequest;
 
 /*
- * Created by Yash on 10/1/18.
+ * Created by Yash on 14/1/18.
  */
 
 public class ApiUrl

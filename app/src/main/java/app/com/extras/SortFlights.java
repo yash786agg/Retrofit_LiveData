@@ -1,4 +1,4 @@
-package app.com.Extras;
+package app.com.extras;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,15 +6,17 @@ import app.com.model.Flights;
 import app.com.model.SortedFlight;
 
 /*
- * Created by Yash on 13/1/18.
+ * Created by Yash on 14/1/18.
  */
 
 public class SortFlights
 {
+    //get sorted arrayList based on fare array in flight
     public static ArrayList<SortedFlight> getSortedFlight(ArrayList<Flights> flights, ArrayList<SortedFlight> sortedFlights)
     {
         for(int i = 0; i < flights.size(); i++)
         {
+            //Sort flight data to provide cheapest price of each flight from fare array
             Collections.sort(flights.get(i).getFareArrayList(), new FareComparator());
 
             SortedFlight sortedFlight = new SortedFlight();

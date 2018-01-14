@@ -1,4 +1,4 @@
-package app.com.IxigoTest;
+package app.com.ixigotest;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -8,10 +8,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
-import app.com.Adapter.ProvidersAdapter;
-import app.com.Extras.Utility;
+import app.com.adapter.ProvidersAdapter;
+import app.com.extras.DrawableColor;
+import app.com.extras.Utility;
 import app.com.model.Appendix;
 import app.com.model.FaresData;
 import app.com.model.Flights;
@@ -20,7 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /*
- * Created by Yash on 12/1/18.
+ * Created by Yash on 14/1/18.
  */
 
 public class FlightDetails extends AppCompatActivity implements View.OnClickListener
@@ -35,6 +37,7 @@ public class FlightDetails extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.flightDestTime) TextView flightDestTime;
     @BindView(R.id.flightDestDay) TextView flightDestDay;
     @BindView(R.id.providersRclv) RecyclerView providersRclv;
+    @BindView(R.id.flight) ImageView flight;
 
     private ProvidersAdapter providersAdapter;
     private Flights flightsData;
@@ -47,16 +50,30 @@ public class FlightDetails extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flight_details);
 
+        /*  Intialization of ButterKnife */
+
         ButterKnife.bind(this);
 
-        ArrayList<Flights> flights = getIntent().getParcelableArrayListExtra("flights");
+        // Get data from flight arrayList from pass
+        ArrayList<Flights> flights = getIntent().getParcelableArrayListExtra(this.getResources().getString(R.string.flights));
 
-        int indexPosition = getIntent().getIntExtra("indexPosition", 0);
+        int indexPosition = getIntent().getIntExtra(this.getResources().getString(R.string.indexPosition), 0);
 
-        appendix = (Appendix) getIntent().getSerializableExtra("appendix");
+        appendix = (Appendix) getIntent().getSerializableExtra(this.getResources().getString(R.string.appendix));
 
         flightsData = flights.get(indexPosition);
 
+        providersAdapter = new ProvidersAdapter(this, (ArrayList<FaresData>) flightsData.getFareArrayList(),appendix,showProvider);
+
+        providersRclv.setLayoutManager(new LinearLayoutManager(this));
+
+        providersRclv.setAdapter(providersAdapter);
+
+        setData(flights);
+    }
+
+    private void setData(ArrayList<Flights> flights)
+    {
         String journey = flights.get(0).getOriginCode() +this.getResources().getString(R.string.dash)+ flights.get(0).getDestinationCode();
 
         flightJourney.setText(journey);
@@ -72,6 +89,8 @@ public class FlightDetails extends AppCompatActivity implements View.OnClickList
                 +" "+ flightsData.getFlightClass();
 
         flightClass.setText(flightType);
+
+        DrawableColor.setImgvDrawableColor(flight,this,appendix.getAirlines().get(flightsData.getAirlineCode()));
 
         String originTime = flights.get(0).getOriginCode()+" "+ Utility.convertTimeStampToTime(flightsData.getDepartureTime());
 
@@ -94,12 +113,6 @@ public class FlightDetails extends AppCompatActivity implements View.OnClickList
             showProvider = true;
             bookProvider.setVisibility(View.GONE);
         }
-
-        providersAdapter = new ProvidersAdapter(this, (ArrayList<FaresData>) flightsData.getFareArrayList(),appendix,showProvider);
-
-        providersRclv.setLayoutManager(new LinearLayoutManager(this));
-
-        providersRclv.setAdapter(providersAdapter);
     }
 
     @Override

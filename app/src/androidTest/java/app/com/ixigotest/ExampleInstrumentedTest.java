@@ -1,4 +1,4 @@
-package app.com.IxigoTest;
+package app.com.ixigotest;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

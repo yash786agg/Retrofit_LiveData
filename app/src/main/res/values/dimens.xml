@@ -2,7 +2,16 @@
 <resources>
 
     <dimen name="dimen0dp">0dp</dimen>
+    <dimen name="dimen1dp">1dp</dimen>
+    <dimen name="dimen5dp">5dp</dimen>
+    <dimen name="dimen10dp">10dp</dimen>
     <dimen name="dimen15dp">15dp</dimen>
+    <dimen name="dimen25dp">25dp</dimen>
+    <dimen name="dimen35dp">35dp</dimen>
+    <dimen name="dimen40dp">40dp</dimen>
+    <dimen name="dimen80dp">80dp</dimen>
+    <dimen name="textSize14sp">14sp</dimen>
     <dimen name="textSize16sp">16sp</dimen>
+    <dimen name="textSize19sp">19sp</dimen>
 
 </resources>

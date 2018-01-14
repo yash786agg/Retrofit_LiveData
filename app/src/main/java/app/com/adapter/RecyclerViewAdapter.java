@@ -1,4 +1,4 @@
-package app.com.Adapter;
+package app.com.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,16 +8,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
-import app.com.Extras.RcylcVItemClick;
-import app.com.Extras.Utility;
-import app.com.IxigoTest.R;
+import app.com.extras.DrawableColor;
+import app.com.extras.RcylcVItemClick;
+import app.com.extras.Utility;
+import app.com.ixigotest.R;
 import app.com.model.Appendix;
 import app.com.model.SortedFlight;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /*
- * Created by Yash on 11/1/18.
+ * Created by Yash on 14/1/18.
  */
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>
@@ -31,7 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RecyclerViewAdapter(Context context, ArrayList<SortedFlight> sortedFlights,Appendix appendix)
     {
         /*
-         * RecyclerViewAdapter Constructor to Initialize Data which we get from DeliveryList Fragment
+         * RecyclerViewAdapter Constructor to Initialize Data which we get from MainActivity
          */
 
         this.context = context;
@@ -58,8 +59,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     {
         /*
          * onBindViewHolder is used to Set all the respective data
-         * to Textview or Imagview form deliveryArrayList
-         * ArrayList Object.
+         * to Textview form sortedFlights ArrayList.
          */
 
         SortedFlight flightsData = sortedFlights.get(position);
@@ -68,7 +68,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         {
             String airLine = appendix.getAirlines().get(flightsData.getAirlineCode());
 
-            holder.flightName.setText(airLine);
+            DrawableColor.setTvDrawableColor(holder.flightName,context,airLine);
         }
 
         if (flightsData.getFare() != 0)
@@ -108,7 +108,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void addItems(ArrayList<SortedFlight> sortedFlights,Appendix appendix)
     {
         /*
-         * addItems method is to add items in the deliverArrayList and notifiy the adapter for the data change.
+         * addItems method is to add items in the sortedFlights and notifiy the adapter for the data change.
          */
 
         this.sortedFlights = sortedFlights;
@@ -137,7 +137,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return position;
     }
 
-
     public void setOnItemClickListener(final RcylcVItemClick mItemClickListener)
     {
         this.clickListener = mItemClickListener;
@@ -165,7 +164,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             itemView.setTag(itemView);
             itemView.setOnClickListener(this);
         }
-
 
         @Override
         public void onClick(View view)

@@ -8,6 +8,10 @@
     <string name="early">early</string>
     <string name="rupee">₹</string>
     <string name="nonStop">non-stop</string>
+    <string name="flights">flights</string>
+    <string name="indexPosition">indexPosition</string>
+    <string name="appendix">appendix</string>
+
 
     <!-- FlightDetails -->
 
@@ -18,4 +22,13 @@
     <string name="mumbaiAiport">Chatrapati Shivaji Intl Airport</string>
     <string name="viewAll">View All</string>
     <string name="viewLess">View Less</string>
+
+    <!-- Airlines -->
+
+    <string name="spiceJet">Spicejet</string>
+    <string name="airIndia">Air India</string>
+    <string name="goAir">Go Air</string>
+    <string name="jetAirways">Jet Airways</string>
+    <string name="indiGo">Indigo</string>
+
 </resources>

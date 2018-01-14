@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="@dimen/dimen80dp"
         android:weightSum="4"
         android:orientation="horizontal"
         android:background="?android:attr/selectableItemBackground">
@@ -35,14 +35,14 @@
             <TextView
                 android:id="@+id/departureTime"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/dimen0dp"
                 android:layout_weight="0.6"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/dimen5dp"
                 android:paddingLeft="@dimen/dimen15dp"
                 android:paddingStart="@dimen/dimen15dp"
                 android:paddingRight="@dimen/dimen0dp"
                 android:paddingEnd="@dimen/dimen0dp"
-                android:textSize="19sp"
+                android:textSize="@dimen/textSize19sp"
                 android:textColor="@android:color/black"
                 android:drawableRight="@drawable/arrow_vector_icon_selector"
                 android:drawableEnd="@drawable/arrow_vector_icon_selector"/>
@@ -50,13 +50,13 @@
             <TextView
                 android:id="@+id/flightDuration"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/dimen0dp"
                 android:layout_weight="0.6"
                 android:paddingLeft="@dimen/dimen15dp"
                 android:paddingStart="@dimen/dimen15dp"
                 android:paddingRight="@dimen/dimen0dp"
                 android:paddingEnd="@dimen/dimen0dp"
-                android:textSize="19sp"
+                android:textSize="@dimen/textSize19sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/darker_gray"/>
 
@@ -71,28 +71,28 @@
             <TextView
                 android:id="@+id/arrivalTime"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/dimen0dp"
                 android:layout_weight="0.4"
-                android:paddingLeft="10dp"
-                android:paddingStart="10dp"
+                android:paddingLeft="@dimen/dimen10dp"
+                android:paddingStart="@dimen/dimen10dp"
                 android:paddingEnd="@dimen/dimen0dp"
                 android:paddingRight="@dimen/dimen0dp"
-                android:layout_marginTop="5dp"
-                android:textSize="19sp"
+                android:layout_marginTop="@dimen/dimen5dp"
+                android:textSize="@dimen/textSize19sp"
                 android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/flightStatus"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/dimen0dp"
                 android:layout_weight="0.4"
-                android:paddingLeft="10dp"
-                android:paddingStart="10dp"
+                android:paddingLeft="@dimen/dimen10dp"
+                android:paddingStart="@dimen/dimen10dp"
                 android:paddingEnd="@dimen/dimen0dp"
                 android:text="@string/nonStop"
                 android:paddingRight="@dimen/dimen0dp"
                 android:gravity="center"
-                android:textSize="14sp"
+                android:textSize="@dimen/textSize14sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/darker_gray"/>
 
@@ -103,12 +103,11 @@
             android:layout_width="@dimen/dimen0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="1500000"
             android:gravity="center"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:textSize="19sp"
-            android:textColor="@android:color/black"/>
+            android:textSize="@dimen/textSize19sp"
+            android:textColor="@color/colorOrange"/>
 
     </LinearLayout>
 

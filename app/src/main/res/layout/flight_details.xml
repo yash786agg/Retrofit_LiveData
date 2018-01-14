@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <ScrollView
@@ -36,7 +36,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="@dimen/dimen1dp"
                     android:background="@color/dividerColor"/>
 
                 <android.support.v7.widget.RecyclerView
@@ -46,13 +46,13 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="@dimen/dimen1dp"
                     android:background="@color/dividerColor"/>
 
                 <Button
                     android:id="@+id/bookProvider"
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
+                    android:layout_height="@dimen/dimen35dp"
                     android:layout_gravity="end"
                     android:text="@string/viewAll"
                     android:layout_margin="5dp"
@@ -84,10 +84,11 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/flight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dimen15dp"
-                        android:background="@drawable/flight_vector_icon_selector"/>
+                        app:srcCompat="@drawable/flight_vector_icon_selector"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -111,8 +112,8 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/dimen1dp"
+                    android:layout_marginTop="@dimen/dimen10dp"
                     android:background="@color/dividerColor"/>
 
                 <LinearLayout
@@ -123,7 +124,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/dimen0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:weightSum="6"
@@ -159,7 +160,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/dimen0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:weightSum="6"
@@ -173,7 +174,7 @@
                             android:id="@+id/flightDestTime"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dimen0dp"
-                            android:textSize="19sp"
+                            android:textSize="@dimen/textSize19sp"
                             android:textColor="@android:color/black"
                             android:layout_weight="2" />
 
@@ -192,17 +193,6 @@
                     </LinearLayout>
 
                 </LinearLayout>
-
-                <!--<Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="@string/book"
-                    android:textSize="@dimen/textSize16sp"
-                    android:textColor="@color/colorOrange"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:background="@drawable/viewless_btn_selector"/>-->
 
             </LinearLayout>
 

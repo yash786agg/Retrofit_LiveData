@@ -1,12 +1,10 @@
-package app.com.apiRequest;
-
-import android.util.Log;
+package app.com.apirequest;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /*
- * Created by Yash on 10/1/18.
+ * Created by Yash on 14/1/18.
  */
 
 public class ApiRequestSingleton

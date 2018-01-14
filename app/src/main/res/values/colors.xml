@@ -12,5 +12,8 @@
     <color name="lineViewColor">#e1e1e1</color>
     <color name="colorOrange">#f16622</color>
     <color name="silverFiftyOpacity">#80DFDFE0</color>
-
+    <color name="ornageRed">#F44336</color>
+    <color name="red">#B71C1C</color>
+    <color name="indiGo">#3F51B5</color>
+    <color name="darkBlue">#191970</color>
 </resources>
