@@ -1,9 +1,8 @@
-package app.com.ixigotest;
+package app.com.LiveData;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -169,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements RcylcVItemClick,V
     }
 
     @Override//Click listener on cheap and early text to perform and show data based on sort
-    @OnClick({R.id.cheap, R.id.early,R.id.Portrait,R.id.Landscape})
+    @OnClick({R.id.cheap, R.id.early})
     public void onClick(View v)
     {
         switch (v.getId())
@@ -184,14 +183,6 @@ public class MainActivity extends AppCompatActivity implements RcylcVItemClick,V
 
                 sortFlights(1);// Cheap --> 0 and Early ---> 1
 
-                break;
-
-            case R.id.Portrait:
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                break;
-
-            case R.id.Landscape:
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                 break;
         }
     }

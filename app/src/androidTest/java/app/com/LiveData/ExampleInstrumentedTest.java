@@ -1,4 +1,4 @@
-package app.com.ixigotest;
+package app.com.LiveData;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

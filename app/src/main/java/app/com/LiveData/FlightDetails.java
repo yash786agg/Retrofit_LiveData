@@ -1,6 +1,5 @@
-package app.com.ixigotest;
+package app.com.LiveData;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -116,7 +115,7 @@ public class FlightDetails extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
-    @OnClick({R.id.backButton, R.id.bookProvider,R.id.Portrait,R.id.Landscape})
+    @OnClick({R.id.backButton, R.id.bookProvider})
     public void onClick(View v)
     {
         switch (v.getId())
@@ -142,14 +141,6 @@ public class FlightDetails extends AppCompatActivity implements View.OnClickList
 
                 providersAdapter.updateProvider((ArrayList<FaresData>)flightsData.getFareArrayList(),appendix,showProvider);
 
-                break;
-
-            case R.id.Portrait:
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                break;
-
-            case R.id.Landscape:
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                 break;
         }
     }

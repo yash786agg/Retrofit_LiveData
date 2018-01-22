@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.TextView;
-import app.com.ixigotest.R;
+import app.com.LiveData.R;
 
 /*
  * Created by Yash on 14/1/18.

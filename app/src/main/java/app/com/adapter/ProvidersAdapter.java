@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import app.com.ixigotest.R;
+import app.com.LiveData.R;
 import app.com.model.Appendix;
 import app.com.model.FaresData;
 import butterknife.BindView;
